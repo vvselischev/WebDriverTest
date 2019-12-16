@@ -29,5 +29,7 @@ public class LoginPage {
         webDriver.findElement(By.id(LOGIN_FIELD_ID)).sendKeys(LOGIN);
         webDriver.findElement(By.id(PASSWORD_FIELD_ID)).sendKeys(PASSWORD);
         webDriver.findElement(By.id(LOGIN_BUTTON_ID)).click();
+        new WebDriverWait(webDriver, TIMEOUT)
+                .until(ExpectedConditions.titleIs("Welcome to JetBrains YouTrack"));
     }
 }
